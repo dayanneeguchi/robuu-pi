@@ -1,0 +1,1185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: radial-gradient(#297683, #12bcb3);
+  color: #e6e6e6;
+  font-size: 16px;
+  width: 100vw;
+  height: 100vh;
+  /*     overflow: hidden; */
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #3cfff5;
+    width: 60%;
+    height: 40px;
+    left: 50px;
+    border: 50%;
+    border-radius: 20px;
+    filter: blur(50px);
+  }
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-40%);
+  /* centralizar horizontal*/
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 800px;
+  gap: 10%;
+  z-index: 3;
+  padding: 28px 8%;
+
+
+  & img {
+    width: 250px;
+  }
+
+  & nav {
+    & ul {
+      display: grid;
+      grid-template-columns: repeat(4, 120px);
+      margin-bottom: 3%;
+
+      & li a {
+        text-decoration: none;
+        color: #04524e;
+        font-family: "League Gothic", sans-serif;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        &:hover {
+          color: #ffffff;
+          border-bottom: 2px solid #ff932e;
+          border-radius: 1px;
+        }
+      }
+    }
+  }
+}
+
+/* HEADER mobile*/
+#navbar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+#mobile_btn { /* esconder botão mobile  */
+  display: none;
+
+}
+
+#mobile_menu { /* esconder menu mobile  */
+  display: none;
+}
+
+/* tirar o menu horizontal quando a tela for menor que 1170px */
+@media screen and (max-width: 1170px) {
+  #nav_list,
+  #navbar .btn-default {
+      display: none;
+  }
+  #mobile_btn {
+      display: flex;
+      border: none;
+      background-color: transparent;
+      font-size: 2rem;
+      cursor: pointer;
+      margin-top: -3%;
+      color: #004b47;
+  }
+
+  #mobile_menu.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  #mobile_nav_list {
+      display: flex;
+      flex-direction: column;
+      margin-left: 100%;
+      gap: 10px;
+  }
+
+#mobile_nav_list .nav-item {
+      list-style: none;
+      text-align: center;
+      
+      & a{
+        font-family: "League Gothic", sans-serif;
+        color: #04524e;
+        text-decoration: none;
+        background-color: #ffffff;
+        padding: 12% 12%;
+        border-radius: 5px;
+        
+        &:hover{
+          color: #ffffff;
+          border-bottom: 2px solid #ff932e;
+          border-radius: 1px;
+          background-color: #12bcb3;
+          padding: 15% 15%;
+          border-radius: 5px;
+        }
+      }
+  }
+}
+
+/* HEADER HEADER HEADER HEADER*/
+
+#showcase {
+  height: 100vh;
+  /* ocupa tela toda */
+  position: relative;
+  /* facilita estilização */
+
+  
+
+  & .list {
+    width: 70vw;
+    height: 100%;
+    margin: auto;
+    position: relative;
+
+    & .item {
+      position: absolute;
+      inset: 0;
+      /* top:0 ; bottom:0 ; left:0 ; right:0 ;*/
+
+      & .rob-img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        /* centralizar vertical */
+        width: 55%;
+        left: 5%;
+
+        & img {
+          width: 70%;
+          transform: rotate(-20deg);
+          /* rotação da imagem */
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          background-color: #3cfff5;
+          width: 60%;
+          height: 40px;
+          top: 100%;
+          left: 50px;
+          border: 50%;
+          border-radius: 20px;
+          filter: blur(50px);
+          z-index: 0;
+        }
+
+        /* SOMBRA dos robôs - iluminação */
+      }
+
+      & .content {
+        position: absolute;
+        right: 100px;
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        gap: 20px;
+
+        & .rob-information {
+          font-weight: bold;
+        }
+
+        & h2 {
+          font-size: 8em;
+          line-height: 1em;
+          /* altura linha */
+          font-family: "League Gothic", sans-serif;
+        }
+
+        & .description {
+          color: #ececec;
+          font-size: 12px;
+          text-align: right;
+          max-width: 400px;
+        }
+
+        & .information {
+          /* botão */
+          border-radius: 30px;
+          height: 35px;
+          width: 120px;
+          text-transform: uppercase;
+          /* maiúscula */
+          border: 2px solid #fda34f;
+          background-color: #f9b06b;
+          color: #bd5711;
+          cursor: pointer;
+          font-weight: bold;
+          font-family: "League Gothic", sans-serif;
+
+          & a {
+            color: #bd5711;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: "League Gothic", sans-serif;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    &::before {
+      /* antes ou depois dos itens */
+      content: "";
+      position: absolute;
+      height: 200px;
+      width: 100%;
+      top: 50%;
+      border-top: 1px solid #fff;
+    }
+  }
+
+  .arrows {
+    width: 72vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    display: flex;
+    justify-content: space-between;
+
+    & button:nth-child(1) {
+      & img {
+        transform: scale(-1);
+      }
+    }
+
+    & button {
+      top: 60%;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+
+      & img {
+        width: 30px;
+        margin-left: 9.5px;
+        cursor: pointer;
+      }
+
+      &:hover {
+        background-color: #fda34f;
+      }
+    }
+  }
+
+  .indicators {
+    /* li's vazias */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 15px;
+
+    & .number {
+      font-size: 5em;
+      font-family: "League Gothic", sans-serif;
+    }
+
+    & ul {
+      display: flex;
+      gap: 10px;
+
+      & li {
+        width: 50px;
+        height: 5px;
+        background-color: #fcb06c;
+        border-radius: 5px;
+        transition: 0.5s;
+      }
+
+      & .active {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+section {
+  & .list {
+    --calculation: 1;
+
+    & .item {
+      transform: translateX(calc(100vw * var(--calculation)));
+      transition: 0.5s;
+      opacity: 0;
+
+      & .rob-img {
+        & img {
+          transform: rotate(0);
+          transition: 0.5s;
+          transition-delay: 0.3s;
+        }
+      }
+
+      & .content {
+
+        & .rob-information,
+        h2,
+        .description,
+        .information {
+          transform: translateX(calc(100vw * var(--calculation)));
+          transition: 0.7s;
+          transition-delay: 0.3s;
+        }
+
+        & h2 {
+          transition-delay: 0.5s;
+        }
+
+        & .description {
+          transition-delay: 0.7s;
+        }
+
+        & .information {
+          transition-delay: 0.9s;
+        }
+      }
+    }
+
+    & .active {
+      transform: translateX(0);
+      transition: 0.5s;
+      opacity: 1;
+
+      & .rob-img {
+        & img {
+          transform: rotate(-20deg);
+        }
+      }
+
+      & .content {
+        & .rob-information, h2, .description, .information {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
+
+/* botão para whatsapp */
+
+.home-end {
+display: flex;
+width: 100vh;
+align-items: center;
+justify-content: center;
+
+  & .btn-home {
+    & button {
+      border: 2px solid #fda34f;
+      background-color: #f9b06b;
+      border-radius: 30px;
+      height: 50px;
+      width: 200px;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      color: #bd5711;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f58e4a;
+      }
+
+      & a {
+        color: #bd5711;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: "League Gothic", sans-serif;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1170px){
+  .home-end {
+    display: flex;
+    width: 100%;
+    padding-left: 38%;
+
+  }
+  .btn-home {
+    width: 100%;
+    display: flex;
+
+    & button{
+      width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 600px){
+  .home-end {
+    padding-left: 31%;
+
+  }
+  
+  }
+
+
+/* BANNER */
+
+#banner {
+  display: flex;
+  align-items: start;
+  /* encima */
+  justify-content: end;
+  /* direira */
+  width: 45%;
+  /*     z-index: 2; */
+}
+
+#banner img {
+  height: 100%;
+  width: fit-content;
+}
+
+
+@media screen and (max-width: 1220px) {
+  #home {
+    min-height: 100%;
+    padding-top: 0px;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  #banner,
+  #banner img,
+  #home .shape {
+    display: none;
+  }
+
+  #cta {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  #cta_buttons {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #phone_button button {
+    display: none;
+  }
+
+  #cta_buttons {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* -------------------- PRODUCTS SLIDER -------------------- */
+
+.product {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.product-category {
+  padding: 0 10vw;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}
+
+.product-container {
+  padding: 0 10vw;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.product-container::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 450px;
+  margin-right: 40px;
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.product-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discount-tag {
+  position: absolute;
+  background: #fff;
+  padding: 6px;
+  border-radius: 5px;
+  left: 17px;
+  color: #f58e4a;
+  top: 14px;
+  text-transform: capitalize;
+}
+
+.card-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  width: 90%;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #f58e4a;
+  border-radius: 20px;
+  transition: 0.5s;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.card-btn a{
+  color: #e66a18;
+}
+
+
+
+.product-card:hover .card-btn {
+  opacity: 1;
+}
+
+.card-btn:hover {
+  background: #f9b06b;
+  color: #fff;
+}
+
+.product-info {
+  width: 100%;
+  height: 100px;
+  padding-top: 10px;
+}
+
+.product-brand {
+  text-transform: uppercase;
+}
+
+.product-short-description {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  opacity: 0.5;
+  text-transform: capitalize;
+  margin: 5px 0;
+}
+
+.price {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.actual-price {
+  margin-left: 20px;
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.pre-btn,
+.nxt-btn {
+  border: none;
+  width: 10vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(170, 255, 215, 0) 0%, #fff 100%);
+  cursor: pointer;
+  z-index: 8;
+}
+
+.pre-btn {
+  left: 0;
+  transform: rotate(180deg);
+  width: 50px;
+}
+
+.nxt-btn {
+  right: 0;
+  width: 50px;
+}
+
+.pre-btn img,
+.nxt-btn img {
+  opacity: 0.2;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+  opacity: 1;
+}
+
+.collection-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.collection {
+  position: relative;
+}
+
+.collection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  text-transform: capitalize;
+}
+
+.collection:nth-child(3) {
+  grid-column: span 2;
+  margin-bottom: 10px;
+}
+
+
+
+/* FIM PRODUCTS SLIDER */
+
+
+
+
+/* PRODUTOS */
+#products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 15%;
+}
+
+.btn-default {
+  & button {
+    border: 2px solid #fda34f;
+    background-color: #f9b06b;
+    border-radius: 30px;
+    height: 100px;
+    width: 400px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #bd5711;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f58e4a;
+    }
+
+    & a {
+      color: #bd5711;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: "League Gothic", sans-serif;
+    }
+  }
+}
+
+#robots {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.robot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  gap: 10px;
+  width: 33%;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+  /* sombra */
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+.robot-heart {
+  position: absolute;
+  background-color: #12bcb3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  width: 70px;
+  height: 70px;
+  right: -10px;
+  top: -10px;
+  border-radius: 0px 35.5px 0px 40.5px;
+}
+
+.robot-title {
+  color: #344645;
+}
+
+.robot-description {
+  color: gray;
+  text-align: center;
+}
+
+.robot-rate i {
+  color: #12bcb3;
+
+}
+
+.robot-rate {
+  & span {
+    color: #04524e;
+  }
+}
+
+.robot-price {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #bd5711;
+}
+
+.section-title {
+  font-family: "League Gothic", sans-serif;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #b5dad8;
+}
+
+.section-subtitle {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 1170px) {
+  #robots {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .robot {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .robot {
+    width: 70%;
+  }
+
+  #menu .section-subtitle {
+    text-align: center;
+  }
+}
+
+/* AVALIAÇÕES */
+#testimonials {
+  padding-top: 15%;
+  min-height: calc(100vh - 91px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+
+  & img {
+    width: 500px;
+    height: auto;
+  }
+}
+
+#testimonials .section-subtitle {
+  font-size: 3rem;
+}
+
+#testimonial_content {
+  width: 50%;
+}
+
+#feedbacks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+  margin-top: 30px;
+  align-items: center;
+}
+
+#feedback {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(255, 255, 255);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+
+  & img {
+    width: 120px;
+    height: auto;
+  }
+}
+
+.feedback-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  object-fit: cover;
+  /* para manter a qualidade */
+}
+
+.feedback-content {
+  margin-right: 2%;
+}
+
+.feedback-content p {
+  display: flex;
+  justify-content: space-between;
+  color: #344645;
+
+}
+
+.feedback-content p span {
+  color: #f9b06b;
+  margin-right: 2%;
+
+}
+
+/* BOTÃO AVALIAÇÃO*/
+.btn-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 35px;
+  border-radius: 30px;
+  padding: 10px 14px;
+  font-weight: 600;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  /* borda */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* transição de cor suave */
+  font-family: "League Gothic", sans-serif;
+  text-transform: uppercase;
+  border: 2px solid #fda34f;
+  background-color: #f9b06b;
+  color: #bd5711;
+}
+
+.btn-default:hover {
+  background-color: #ff932e;
+  color: #ffdab8;
+}
+
+.btn-default a {
+  font-family: "League Gothic", sans-serif;
+  text-decoration: none;
+  color: #bd5711;
+}
+
+/* FIM BOTÃO AVALIAÇÃO*/
+
+@media screen and (max-width: 1170px) {
+  #testimonials {
+    flex-direction: column;
+  }
+
+  #testimonials .section-subtitle {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  #testimonial_guia {
+    display: none;
+  }
+
+  #testimonial_content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #testimonials {
+    font-size: 2rem;
+  }
+
+  #feedback {
+    flex-direction: column;
+  }
+
+  #testimonial_content {
+    width: 80%;
+    font-size: 1.2rem;
+  }
+}
+
+/*TERMINA AVALIAÇÃO*/
+
+
+
+/* FALE CONOSCO */
+
+#contactus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 15%;
+}
+
+#contactus_content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#section-subtitle{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.formulario{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 5%;
+  margin-bottom: 30%;
+}
+
+/* css para formulário */
+form {
+  width: 410px;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="telefone"] {   
+  width: 100%;
+  padding: 18px;
+  margin-bottom: 5px;
+  border: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 15px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+textarea {
+  width: 100%;
+  padding: 18px;
+  margin-bottom: 5px;
+  border: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 15px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} 
+
+textarea::placeholder {
+  color: #668774;
+  font-size: 15px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+input::placeholder {
+  color: #668774;
+  font-size: 15px;
+}
+
+.buttonform{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.buttonsubmitform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 35px;
+  border-radius: 30px;
+  padding: 10px 14px;
+  font-weight: 600;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  /* borda */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* transição de cor suave */
+  font-family: "League Gothic", sans-serif;
+  text-transform: uppercase;
+  border: 2px solid #fda34f;
+  background-color: #f9b06b;
+  color: #bd5711;
+}
+
+.buttonsubmitform:hover {
+  background-color: #ff932e;
+  color: #ffdab8;
+}
+
+.buttonsubmitform a {
+  font-family: "League Gothic", sans-serif;
+  text-decoration: none;
+  color: #bd5711;
+}
+
+.erro{
+  color: rgb(168, 28, 51);
+  font-size: 10px;
+  margin: 10px;
+}
+
+@media screen and (max-width: 1170px){
+  #section-subtitle{
+
+    width: 80%;
+
+  }
+
+}
+
+/* TERMINA FALE CONOSCO */
+
+
+
+
+/* RODAPÉ */
+
+footer {
+  background-color: #fcb06c;
+  padding-top: 3%;
+}
+
+#footer_items {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 8% 24px 8%;
+  align-items: center;
+}
+
+#copyright {
+  color: #ffffff;
+  font-weight: 300;
+}
+
+
+.social-media-buttons {
+  display: flex;
+  gap: 18px;
+}
+
+.social-media-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 40px;
+  background-color: white;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #f58e4a;
+  box-shadow: 0px 0px 12px 4px rgba(255, 251, 248, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.social-media-buttons a:hover {
+  box-shadow: 0px 0px 12px 8px rgba(219, 106, 0, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+  #footer_items {
+    padding-top: 3%;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
